@@ -27,6 +27,11 @@ header {
 
 header h1 {
   margin: 0;
+  font-family: 'Cinzel', serif;
+    font-size: 36px;
+    font-weight: 500;
+    letter-spacing: 4px;
+    color: #E8E0D0;
 }
 
 nav {
@@ -47,6 +52,9 @@ main {
   box-sizing: border-box;
   background-color: rgb(29, 28, 28);
   color: white;
+  border-left: 2px solid #8B7955;
+  border-right: 2px solid #8B7955;
+  box-sizing: border-box;
 }
 
 .content-box {
@@ -59,12 +67,12 @@ main {
 }
 
 .content-box img {
-  width: 40%;
-  object-fit: cover;
+  width: 35%;
+  object-fit: contain;
 }
 
 .content-text {
-  width: 60%;
+  width: 65%;
   padding: 30px;
   box-sizing: border-box;
   color: white;
@@ -73,8 +81,47 @@ main {
   justify-content: center;
 }
 
+.quest-button {
+    background-color: #8B7955;
+    color: white;
+    border: 1px solid #B09A6B;
+    border-radius: 5px;
+
+    padding: 12px 24px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.quest-button:hover {
+    background-color: #B09A6B;
+}
+
 .content-text h2 {
   margin-top: 0;
+}
+
+.section-intro {
+  text-align: center;
+  margin: 50px 0 30px;
+}
+
+.section-intro h2::after {
+  font-family: 'Cinzel', serif;
+  font-size: 32px;
+  font-weight: 400;
+  letter-spacing: 3px;
+  color: #E8E0D0;
+  margin-bottom: 10px;
+  content: "";
+  display: block;
+  width: 60%;
+  height: 1px;
+  background-color: #8B7955;
+  margin: 15px auto 0;
 }
 
 .card-grid {
@@ -94,6 +141,13 @@ main {
   min-width: 0;
   min-height: 120px;
   box-sizing: border-box;
+  transition: transform 0.2s ease,
+              background-color 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    background-color: #353535;
 }
 
 .card img {
@@ -113,16 +167,6 @@ main {
   font-size: 14px;
 }
 
-
-
-
-
-
-
-
-
-
-
 @media (max-width: 600px) {
   .content-box {
     flex-direction: column;
@@ -135,5 +179,18 @@ main {
 
   .content-text {
     width: 100%;
+  }
+}
+
+@media (max-width: 900px) {
+  .card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Phones */
+@media (max-width: 500px) {
+  .card-grid {
+    grid-template-columns: 1fr;
   }
 }
