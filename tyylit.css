@@ -69,6 +69,7 @@ main {
 .content-box img {
   width: 35%;
   object-fit: contain;
+  display: block;
 }
 
 .content-text {
@@ -82,18 +83,18 @@ main {
 }
 
 .quest-button {
-    background-color: #8B7955;
-    color: white;
-    border: 1px solid #B09A6B;
-    border-radius: 5px;
+  background-color: #8B7955;
+  color: white;
+  border: 1px solid #B09A6B;
+  border-radius: 5px;
+  align-self: flex-start;
+  padding: 12px 24px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
 
-    padding: 12px 24px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    font-weight: 600;
-
-    cursor: pointer;
-    transition: background-color 0.2s ease;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
 .quest-button:hover {
@@ -109,13 +110,16 @@ main {
   margin: 50px 0 30px;
 }
 
-.section-intro h2::after {
+.section-intro h2 {
   font-family: 'Cinzel', serif;
   font-size: 32px;
   font-weight: 400;
   letter-spacing: 3px;
   color: #E8E0D0;
   margin-bottom: 10px;
+}
+
+.section-intro h2::after {
   content: "";
   display: block;
   width: 60%;
@@ -146,16 +150,16 @@ main {
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    background-color: #353535;
+  transform: translateY(-5px);
+  background-color: #353535;
 }
 
 .card img {
-    width: 100%;
-    height: 140px;
-    object-fit: contain;
-    object-position: center;
-    display: block;
+  width: 100%;
+  height: 140px;
+  object-fit: contain;
+  object-position: center;
+  display: block;
 }
 
 .card h3 {
@@ -167,7 +171,55 @@ main {
   font-size: 14px;
 }
 
+@media (max-width: 900px) {
+
+    .card-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .header-content {
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 28px;
+    }
+}
+
+
 @media (max-width: 600px) {
+
+  .header-content {
+    width: 100%;
+    padding: 20px 15px;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  header h1 {
+    font-size: 24px;
+    letter-spacing: 2px;
+    text-align: center;
+    overflow-wrap: anywhere;
+  }
+
+  nav {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  nav a {
+    font-size: 13px;
+  }
+
+  main {
+    width: 100%;
+    max-width: 100%;
+    padding: 25px 15px;
+  }
+
   .content-box {
     flex-direction: column;
   }
@@ -175,22 +227,38 @@ main {
   .content-box img {
     width: 100%;
     height: 200px;
+    object-fit: contain;
   }
 
   .content-text {
     width: 100%;
+    padding: 20px;
   }
-}
 
-@media (max-width: 900px) {
+  .quest-button {
+    align-self: flex-start;
+  }
+
+  .section-intro {
+    margin: 35px 0 25px;
+  }
+
+  .section-intro h2 {
+    font-size: 24px;
+    letter-spacing: 2px;
+  }
+
   .card-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+    margin-top: 25px;
   }
-}
 
-/* Phones */
-@media (max-width: 500px) {
-  .card-grid {
-    grid-template-columns: 1fr;
+  .card img {
+    height: 110px;
+  }
+
+  .card h3 {
+    font-size: 15px;
   }
 }
